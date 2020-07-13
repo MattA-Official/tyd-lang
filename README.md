@@ -1,18 +1,14 @@
 # tyd-lang README
 
-This is the README for your extension "tyd-lang". After writing up a brief description, we recommend including the following sections.
+This is the README for the "tyd-lang" extension . This is a work in progress syntax highlighting extension.
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+Currently there are no features
 
-For example if there is an image subfolder under your extension project workspace:
+<!--- \!\[feature X\]\(images/feature-x.png\) --->
 
-\!\[feature X\]\(images/feature-x.png\)
-
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
-
-## Requirements
+<!-- ## Requirements
 
 If you have any requirements or dependencies, add a section describing those and how to install and configure them.
 
@@ -62,4 +58,4 @@ Added features X, Y, and Z.
 * [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
 * [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
 
-**Enjoy!**
+**Enjoy!** -->
