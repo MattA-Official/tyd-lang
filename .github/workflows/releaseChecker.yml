@@ -35,7 +35,7 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: '12.x'
-        
+
       - name: clean install vscode cli
         run: npm i
       - name: update metadata in package.json
@@ -64,4 +64,4 @@ jobs:
           tag_name: v${{ steps.gitversion.outputs.semVer }}
           release_name: tyd-lang v${{ steps.gitversion.outputs.semVer }}
       - name: publish to marketplace
-        run: vsce publish -p ${{ env.PAI_TOKEN }}
+        run: npx vsce publish "tyd-lang" -p ${{ env.PAI_TOKEN }}
