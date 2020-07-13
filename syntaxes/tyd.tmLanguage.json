@@ -7,26 +7,36 @@
 		},
 		{
 			"include": "#strings"
+		},
+		{
+			"include": "#paren-expression"
+		},
+		{
+			"include": "#comments"
 		}
 	],
 	"repository": {
 		"keywords": {
 			"patterns": [{
 				"name": "keyword.control.tyd",
-				"match": "\\b(if|while|for|return)\\b"
+				"match": "[*|]"
 			}]
 		},
 		"strings": {
 			"name": "string.quoted.double.tyd",
 			"begin": "\"",
 			"end": "\"",
-			"patterns": [
-				{
-					"name": "constant.character.escape.tyd",
-					"match": "\\\\."
-				}
-			]
+			"patterns": [{
+				"name": "constant.character.escape.tyd",
+				"match": "\\\\."
+			}]
+		},
+		"comments": {
+			"name": "comment",
+			"begin": "#",
+			"end": "$"
 		}
+
 	},
 	"scopeName": "source.tyd"
 }
