@@ -16,7 +16,7 @@ jobs:
           node-version: '12.x'
       - name: execute gitversion
         id: gitversion # step id used as reference for output values
-        uses: gittools/actions/gitversion/execute@v0.9
+        uses: roryprimrose/rungitversion@v1.0.0
         
       - name: print gitversion
         run: |
