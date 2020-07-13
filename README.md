@@ -34,3 +34,4 @@ Initial release
 
 ###### Added
 * doublequote string highlighting
+* commenting
