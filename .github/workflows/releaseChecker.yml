@@ -17,6 +17,9 @@ jobs:
       - name: execute gitversion
         id: gitversion # step id used as reference for output values
         uses: roryprimrose/rungitversion@v1.0.0
+        with:
+          nofetch: true
+        
         
       - name: print gitversion
         run: |
