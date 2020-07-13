@@ -21,5 +21,8 @@
             "scopeName": "source.tyd",
             "path": "./syntaxes/tyd.tmLanguage.json"
         }]
-    }
+    },
+    "dependencies": {
+		"vscode-extension-telemetry": "~0.1.2"
+	}
 }
