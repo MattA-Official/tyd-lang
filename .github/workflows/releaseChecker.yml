@@ -6,7 +6,7 @@ on:
 jobs:
   cicd:
     name: Create Extension Release
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
       - name: checkout repo
         uses: actions/checkout@v2
