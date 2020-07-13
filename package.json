@@ -17,7 +17,7 @@
         "Programming Languages"
     ],
     "scripts": {
-        "package": "npx vsce login \"Matthew Addock\" && npx vsce package"
+        "package": "npx vsce package"
     },
     "contributes": {
         "languages": [
