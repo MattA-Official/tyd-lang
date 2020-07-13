@@ -1,5 +1,9 @@
 # tyd-lang README
 
+This extension adds syntax highlighting for Tynan's Tidy Data Language (.tyd, .ttyd)
+
+![Imgur](https://i.imgur.com/m2NvIkH.gif)
+=======
 This is the README for the "tyd-lang" extension . This is a work in progress syntax highlighting extension.
 
 ## Features
