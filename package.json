@@ -3,6 +3,13 @@
     "displayName": "TyD",
     "description": "Syntax highlighting for Tynan's Tidy Data Language",
     "version": "0.0.1",
+    "icon": "./icon.png",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/MattA-Official/tyd-lang"
+    },
+    "license": "See LICENSE.md",
+    "publisher": "Matthew Addock",
     "engines": {
         "vscode": "^1.47.0"
     },
@@ -10,23 +17,32 @@
         "Programming Languages"
     ],
     "scripts": {
-        "package": "npx vsce package"
+        "package": "npx vsce login \"Matthew Addock\" && npx vsce package"
     },
     "contributes": {
-        "languages": [{
-            "id": "tyd",
-            "aliases": ["TyD", "tyd"],
-            "extensions": [".tyd"],
-            "configuration": "./language-configuration.json"
-        }],
-        "grammars": [{
-            "language": "tyd",
-            "scopeName": "source.tyd",
-            "path": "./syntaxes/tyd.tmLanguage.json"
-        }]
+        "languages": [
+            {
+                "id": "tyd",
+                "aliases": [
+                    "TyD",
+                    "tyd"
+                ],
+                "extensions": [
+                    ".tyd"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "tyd",
+                "scopeName": "source.tyd",
+                "path": "./syntaxes/tyd.tmLanguage.json"
+            }
+        ]
     },
     "dependencies": {
         "npx": "10.2.2",
-		"vscode-extension-telemetry": "~0.1.2"
-	}
+        "vscode-extension-telemetry": "~0.1.2"
+    }
 }

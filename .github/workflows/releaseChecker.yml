@@ -37,7 +37,7 @@ jobs:
           node-version: '12.x'
 
       - name: clean install vscode cli
-        run: npm i
+        run: npm ci
       - name: update metadata in package.json
         uses: onlyutkarsh/patch-files-action@v1.0.1
         with:
