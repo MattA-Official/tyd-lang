@@ -35,3 +35,4 @@ Initial release
 ###### Added
 * doublequote string highlighting
 * commenting
+* highlight special operators such as *, `|` etc.
