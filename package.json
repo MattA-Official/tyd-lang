@@ -10,7 +10,7 @@
         "Programming Languages"
     ],
     "scripts": {
-        "package": "vsce package"
+        "package": "npx vsce package"
     },
     "contributes": {
         "languages": [{
@@ -26,6 +26,7 @@
         }]
     },
     "dependencies": {
+        "npx": "10.2.2",
 		"vscode-extension-telemetry": "~0.1.2"
 	}
 }
