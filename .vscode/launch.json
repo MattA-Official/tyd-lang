@@ -44,11 +44,7 @@
             "runtimeExecutable": "${execPath}",
             "args": [
                 "--extensionDevelopmentPath=${workspaceFolder}"
-			],
-			"preLaunchTask": {
-				"type": "npm",
-				"script": "watch"
-			}
+			]
         }
     ]
 }
