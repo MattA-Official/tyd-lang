@@ -145,6 +145,7 @@ async function validateTextDocument(textDocument: TextDocument): Promise<void> {
 			problems++;
 			Diag.diagnostic.code = Diag.code
 			Diag.setRange(textDocument, m);
+			if (Diag.ignore = true) return problems -= 1;
 			diagnostics.push(Diag.diagnostic);
 		}
 	});

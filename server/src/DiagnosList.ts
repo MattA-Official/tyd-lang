@@ -17,7 +17,25 @@ const nsq = {
         this.diagnostic.range.end = e.positionAt(m.index + m[0].length)
     }
 }
-
+const ncs = {
+    ignore: false,
+    pattern:  /'.*?'/g,
+    code: "TyD-ncs",
+    diagnostic: {
+        severity: DiagnosticSeverity.Error,
+        range: {
+            start: Position.create(0,0),
+            end: Position.create(0,0)
+        },
+        message: "Semi-colon not escaped in string."
+    },
+    setRange(e: TextDocument, m: RegExpExecArray) {
+        if (m[0].includes("\\;")) this.ignore = true;
+        this.diagnostic.range.start = e.positionAt(m.index),
+        this.diagnostic.range.end = e.positionAt(m.index + m[0].length)
+    }
+}
+// /\".*?[;].*?\"
 const list: Diagno[] = [nsq];
 
 module.exports = list;
