@@ -1,7 +1,7 @@
-import { Diagnostic, TextDocument } from "vscode-languageserver";
+import { Diagnostic } from "vscode-languageserver";
+import { TextDocument } from "vscode-languageserver-textdocument";
 
 export interface Diagno {
-    ignore?: boolean,
     pattern: RegExp,
     code: string,
     diagnostic: Diagnostic,

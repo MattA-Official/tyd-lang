@@ -140,12 +140,11 @@ async function validateTextDocument(textDocument: TextDocument): Promise<void> {
 
 	let problems = 0;
 	let diagnostics: Diagnostic[] = [];
-	Diagnos.forEach(Diag => {
-		while ((m = Diag.pattern.exec(text)) && problems < 100) {
-			problems++;
+	Diagnos.forEach(async Diag => {
+		while((m = Diag.pattern.exec(text)) && problems < 100) {	
+			problems++;		
 			Diag.diagnostic.code = Diag.code
-			Diag.setRange(textDocument, m);
-			if (Diag.ignore = true) return problems -= 1;
+			Diag.setRange(textDocument, m);	
 			diagnostics.push(Diag.diagnostic);
 		}
 	});
