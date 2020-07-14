@@ -25,7 +25,7 @@
 		"keywords": {
 			"patterns": [{
 				"name": "keyword.control.tyd",
-				"match": "(\\*handle)|(\\*abstract)|(\\*source)|(\\*noinherit)"
+				"match": "(\\*[a-zA-Z]*)"
 			}]
 		},
 		"strings": {

@@ -1,15 +1,15 @@
 {
-	"name": "lsp-sample-server",
-	"description": "Example implementation of a language server in node.",
+	"name": "tyd-language-server",
+	"description": "The backend for the",
 	"version": "1.0.0",
-	"author": "Microsoft Corporation",
-	"license": "MIT",
+	"author": "Calum Henderson",
+	"license": "See LICENSE.md",
 	"engines": {
 		"node": "*"
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/Microsoft/vscode-extension-samples"
+		"url": "https://github.com/MattA-Official/tyd-lang"
 	},
 	"dependencies": {
 		"vscode-languageserver": "^6.1.1",

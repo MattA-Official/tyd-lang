@@ -33,13 +33,13 @@
             "type": "object",
             "title": "TyD Language Server Configuration",
             "properties": {
-                "languageServerExample.maxNumberOfProblems": {
+                "TyDlanguageServer.maxNumberOfProblems": {
                     "scope": "resource",
                     "type": "number",
                     "default": 100,
                     "description": "Controls the maximum number of problems produced by the server."
                 },
-                "languageServerExample.trace.server": {
+                "TyDlanguageServer.trace.server": {
                     "scope": "window",
                     "type": "string",
                     "enum": [

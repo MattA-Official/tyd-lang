@@ -83,11 +83,19 @@ connection.onInitialized(() => {
 });
 //#endregion
 //#region Settings and Events
+
+enum VerboseEnum {
+	Off,
+	Messages,
+	Verbose
+}
 interface Settings {
+	verbose: VerboseEnum;
 	maxNumberOfProblems: number;
 }
 
 const defaultSettings: Settings = {
+	verbose: VerboseEnum.Off,
 	maxNumberOfProblems: 1000
 };
 let globalSettings: Settings = defaultSettings;
@@ -100,7 +108,7 @@ connection.onDidChangeConfiguration(change => {
 		documentSettings.clear();
 	} else {
 		globalSettings = <Settings>(
-			(change.settings.languageServerExample || defaultSettings)
+			(change.settings.TyDlanguageServer || defaultSettings)
 		);
 	}
 	documents.all().forEach(validateTextDocument);
@@ -142,9 +150,9 @@ async function validateTextDocument(textDocument: TextDocument): Promise<void> {
 	let diagnostics: Diagnostic[] = [];
 	Diagnos.forEach(async Diag => {
 		while((m = Diag.pattern.exec(text)) && problems < 100) {	
-			problems++;		
-			Diag.diagnostic.code = Diag.code
-			Diag.setRange(textDocument, m);	
+			problems++;	
+			Diag.setRange(textDocument, m);		
+			Diag.diagnostic.code = Diag.code			
 			diagnostics.push(Diag.diagnostic);
 		}
 	});
