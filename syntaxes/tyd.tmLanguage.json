@@ -13,30 +13,52 @@
 		},
 		{
 			"include": "#comments"
+		},
+		{
+			"include": "#units"
+		},
+		{
+			"include": "#operators"
 		}
 	],
 	"repository": {
 		"keywords": {
 			"patterns": [{
 				"name": "keyword.control.tyd",
-				"match": "[*|]"
+				"match": "(\\*handle)|(\\*abstract)|(\\*source)|(\\*noinherit)"
 			}]
 		},
 		"strings": {
-			"name": "string.quoted.double.tyd",
-			"begin": "\"",
-			"end": "\"",
+			"name": "string.tyd",
 			"patterns": [{
+				"name": "string.quoted.double.tyd",
+				"begin": "\"",
+				"end": "\""
+			},{
 				"name": "constant.character.escape.tyd",
 				"match": "\\\\."
 			}]
 		},
 		"comments": {
-			"name": "comment",
-			"begin": "#",
-			"end": "$"
+			"name": "comment.tyd",
+			"patterns": [{
+				"name": "comment",
+				"begin": "#",
+				"end": "$"
+			}, {
+				"name": "comment.block.documentation",
+				"begin": "###",
+				"end": "$"
+			}]
+		},
+		"units": {
+			"name": "keyword.other.unit.tyd",
+			"match": "(\\d)"
+		},
+		"operators": {
+			"name": "keyword.operator.tyd",
+			"match": "(\\|)"
 		}
-
 	},
 	"scopeName": "source.tyd"
 }

@@ -2,14 +2,14 @@
     "name": "tyd-lang",
     "displayName": "TyD",
     "description": "Syntax highlighting for Tynan's Tidy Data Language",
-    "version": "0.1.1",
+    "version": "1.1.1",
     "icon": "icon.png",
     "repository": {
         "type": "git",
         "url": "https://github.com/MattA-Official/tyd-lang"
     },
     "license": "See LICENSE.md",
-    "publisher": "Matthew-Addock",
+    "publisher": "Matthew-Adcock",
     "engines": {
         "vscode": "^1.47.0"
     },
@@ -31,11 +31,27 @@
                     ".tyd"
                 ],
                 "configuration": "./language-configuration.json"
+            },
+            {
+                "id": "ttyd",
+                "aliases": [
+                    "tTyD",
+                    "ttyd"
+                ],
+                "extensions": [
+                    ".ttyd"
+                ],
+                "configuration": "./language-configuration.json"
             }
         ],
         "grammars": [
             {
                 "language": "tyd",
+                "scopeName": "source.tyd",
+                "path": "./syntaxes/tyd.tmLanguage.json"
+            },
+            {
+                "language": "ttyd",
                 "scopeName": "source.tyd",
                 "path": "./syntaxes/tyd.tmLanguage.json"
             }
