@@ -1,5 +1,5 @@
 
-  Licensed under the OE-O Open Source License, Version 0.3 (the "License");
+  Licensed under the OE-O Open Source License, Version 0.4 (the "License");
   you may not use this file except in compliance with the License.
   You may obtain a copy of the License at
 
