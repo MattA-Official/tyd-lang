@@ -2,6 +2,10 @@
 
 All notable changes to this extension will be documented in this file.
 
+### 1.1.1
+
+Fixed bugs.
+
 ### 1.1.0
 
 Added features.
