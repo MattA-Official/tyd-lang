@@ -17,9 +17,41 @@
         "Programming Languages"
     ],
     "scripts": {
-        "package": "npx vsce package"
+        "vscode:prepublish": "npm run compile",
+        "compile": "npx -p typescript tsc -build",
+        "watch": "npx -p typescript tsc --build -watch",
+        "postinstall": "cd client && npm install && cd ../server && npm install && cd ..",
+        "package": "npm run compile && npx vsce package"
     },
+    "main": "./client/out/extension",
+    "activationEvents": [
+        "onLanguage:tyd",
+        "onLanguage:ttyd"
+    ],
     "contributes": {
+        "configuration": {
+            "type": "object",
+            "title": "TyD Language Server Configuration",
+            "properties": {
+                "languageServerExample.maxNumberOfProblems": {
+                    "scope": "resource",
+                    "type": "number",
+                    "default": 100,
+                    "description": "Controls the maximum number of problems produced by the server."
+                },
+                "languageServerExample.trace.server": {
+                    "scope": "window",
+                    "type": "string",
+                    "enum": [
+                        "off",
+                        "messages",
+                        "verbose"
+                    ],
+                    "default": "off",
+                    "description": "Traces the communication between VS Code and the language server."
+                }
+            }
+        },
         "languages": [
             {
                 "id": "tyd",
@@ -57,8 +89,16 @@
             }
         ]
     },
+    "devDependencies": {
+        "@types/mocha": "^7.0.2",
+        "mocha": "^8.0.1",
+        "@types/node": "^12.12.0",
+        "eslint": "^6.4.0",
+        "@typescript-eslint/parser": "^2.3.0",
+        "typescript": "^3.9.4",
+        "npx": "10.2.2"
+    },
     "dependencies": {
-        "npx": "10.2.2",
         "vscode-extension-telemetry": "~0.1.2"
     }
 }
