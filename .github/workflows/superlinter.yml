@@ -9,8 +9,6 @@ jobs:
     name: Lint Markdown
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v2
       - name: Lint Code Base
         uses: docker://github/super-linter:v3
         env:
@@ -19,9 +17,16 @@ jobs:
     name: Lint json
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v2
       - name: Lint Code Base
         uses: docker://github/super-linter:v3
         env:
           VALIDATE_JSON: true
+  typescript:
+    name: Lint typescript
+    runs-on: ubuntu-latest
+    steps:
+      - name: Lint Code Base
+        uses: docker://github/super-linter:v3
+        env:
+          VALIDATE_TYPESCRIPT_STANDARD: true
+
