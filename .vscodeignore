@@ -4,3 +4,8 @@
 vsc-extension-quickstart.md
 node_modules
 *.vsix
+out
+test
+testFixture
+workflows
+ISSUE_TEMPLATE

@@ -2,7 +2,7 @@
     "name": "tyd-lang",
     "displayName": "TyD",
     "description": "Syntax highlighting for Tynan's Tidy Data Language",
-    "version": "1.2.0",
+    "version": "1.2.1",
     "icon": "icon.png",
     "repository": {
         "type": "git",
@@ -17,11 +17,10 @@
         "Programming Languages"
     ],
     "scripts": {
-        "vscode:prepublish": "npm run compile",
         "compile": "npx -p typescript tsc -build",
         "watch": "npx -p typescript tsc --build -watch",
         "postinstall": "cd client && npm install && cd ../server && npm install && cd ..",
-        "package": "npm run compile && npx vsce package"
+        "package": "npm run compile && npx vsce package && npx vsce publish -p"
     },
     "main": "./client/out/extension",
     "activationEvents": [
