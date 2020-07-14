@@ -3,14 +3,20 @@
 All notable changes to this extension will be documented in this file.
 
 ### 1.1.1
-
-Fixed bugs.
+#### Updated:
+* Nothing
+#### Changed:
+* Fixed highlighting issues.
+* Fixed number highlighting bleeding onto the next line.
+* Fixed strings not highlighting sometimes.
+#### Removed:
+* Removed Multiline comments as they are not supported in TyD
 
 ### 1.1.0
 
 Added features.
 
-#### In this update:
+#### Updated:
 
 * number highlighting
 * correctly highlighted operators
@@ -23,7 +29,7 @@ Added features.
 
 Initial release
 
-#### In this update:
+#### Updated:
 * doublequote string highlighting
 * commenting
 * highlight special operators such as *, `|` etc.
