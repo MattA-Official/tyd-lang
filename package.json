@@ -2,75 +2,34 @@
     "name": "tyd-lang",
     "displayName": "TyD",
     "description": "Syntax highlighting for Tynan's Tidy Data Language",
-    "version": "1.3.0",
-    "icon": "icon.png",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/MattA-Official/tyd-lang"
-    },
-    "license": "See LICENSE.md",
     "publisher": "Matthew-Adcock",
+    "version": "1.3.0",
     "engines": {
         "vscode": "^1.47.0"
     },
     "categories": [
         "Programming Languages"
     ],
-    "scripts": {
-        "package": "npx vsce package && npx vsce publish -p"
-    },
-    "activationEvents": [
-        "onLanguage:tyd",
-        "onLanguage:ttyd"
-    ],
     "contributes": {
-        "languages": [
-            {
-                "id": "tyd",
-                "aliases": [
-                    "TyD",
-                    "tyd"
-                ],
-                "extensions": [
-                    ".tyd"
-                ],
-                "configuration": "./language-configuration.json"
-            },
-            {
-                "id": "ttyd",
-                "aliases": [
-                    "tTyD",
-                    "ttyd"
-                ],
-                "extensions": [
-                    ".ttyd"
-                ],
-                "configuration": "./language-configuration.json"
-            }
-        ],
-        "grammars": [
-            {
-                "language": "tyd",
-                "scopeName": "source.tyd",
-                "path": "./syntaxes/tyd.tmLanguage.json"
-            },
-            {
-                "language": "ttyd",
-                "scopeName": "source.tyd",
-                "path": "./syntaxes/tyd.tmLanguage.json"
-            }
-        ]
-    },
-    "devDependencies": {
-        "@types/mocha": "^8.0.0",
-        "mocha": "^8.0.1",
-        "@types/node": "^14.0.23",
-        "eslint": "^6.4.0",
-        "@typescript-eslint/parser": "^3.6.1",
-        "typescript": "^3.9.4",
-        "npx": "10.2.2"
-    },
-    "dependencies": {
-        "vscode-extension-telemetry": "~0.1.2"
+        "languages": [{
+            "id": "tyd",
+            "aliases": ["TyD", "tyd"],
+            "extensions": [".tyd"],
+            "configuration": "./language-configuration.json"
+        }, {
+            "id": "ttyd",
+            "aliases": ["TTyD", "ttyd"],
+            "extensions": [".ttyd"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "tyd",
+            "scopeName": "source.tyd",
+            "path": "./syntaxes/tyd.tmLanguage.json"
+        }, {
+            "language": "ttyd",
+            "scopeName": "source.tyd",
+            "path": "./syntaxes/tyd.tmLanguage.json"
+        }]
     }
-}
+} 
