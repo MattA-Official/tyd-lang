@@ -2,7 +2,7 @@
     "name": "tyd-lang",
     "displayName": "TyD",
     "description": "Syntax highlighting for Tynan's Tidy Data Language",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "icon": "icon.png",
     "repository": {
         "type": "git",
@@ -17,40 +17,13 @@
         "Programming Languages"
     ],
     "scripts": {
-        "compile": "npx -p typescript tsc -build",
-        "watch": "npx -p typescript tsc --build -watch",
-        "postinstall": "cd client && npm install && cd ../server && npm install && cd ..",
-        "package": "npm run compile && npx vsce package && npx vsce publish -p"
+        "package": "npx vsce package && npx vsce publish -p"
     },
-    "main": "./client/out/extension",
     "activationEvents": [
         "onLanguage:tyd",
         "onLanguage:ttyd"
     ],
     "contributes": {
-        "configuration": {
-            "type": "object",
-            "title": "TyD Language Server Configuration",
-            "properties": {
-                "TyDlanguageServer.maxNumberOfProblems": {
-                    "scope": "resource",
-                    "type": "number",
-                    "default": 100,
-                    "description": "Controls the maximum number of problems produced by the server."
-                },
-                "TyDlanguageServer.trace.server": {
-                    "scope": "window",
-                    "type": "string",
-                    "enum": [
-                        "off",
-                        "messages",
-                        "verbose"
-                    ],
-                    "default": "off",
-                    "description": "Traces the communication between VS Code and the language server."
-                }
-            }
-        },
         "languages": [
             {
                 "id": "tyd",

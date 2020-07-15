@@ -2,6 +2,18 @@
 
 All notable changes to this extension will be documented in this file.
 
+### 1.3.0
+
+Removed diagnostics.
+
+Bug fixes too big to put in markdown.
+
+### 1.2.0
+
+### Updated:
+
+Added Diagnostics
+
 ### 1.1.1
 #### Updated:
 * Nothing

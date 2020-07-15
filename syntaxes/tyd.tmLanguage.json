@@ -1,8 +1,7 @@
 {
 	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
 	"name": "TyD",
-	"patterns": [
-		{
+	"patterns": [{
 			"include": "#keywords"
 		},
 		{
@@ -29,18 +28,17 @@
 			}]
 		},
 		"strings": {
-			"name": "string.tyd",
 			"patterns": [{
-				"name": "string.quoted.double.tyd",
-				"begin": "\"",
-				"end": "\""
-			},{
-				"name": "constant.character.escape.tyd",
-				"match": "\\\\."
-			}]
+				"name": "constant.character.escape",
+				"match": "\\\\[.]"
+			}, 
+			{
+				"name": "string.quoted.double",
+				"match": "(\"[^\"\\\\]*(?:\\\\.[^\"\\\\]*)*\")"
+			}
+		]
 		},
 		"comments": {
-			"name": "comment.tyd",
 			"patterns": [{
 				"name": "comment",
 				"begin": "#",
