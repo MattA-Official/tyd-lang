@@ -31,5 +31,9 @@
             "scopeName": "source.tyd",
             "path": "./syntaxes/tyd.tmLanguage.json"
         }]
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/MattA-Official/tyd-lang"
     }
 } 
