@@ -1,20 +1,15 @@
 {
 	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
 	"name": "TyD",
-	"patterns": [{
+	"patterns": [
+		{
 			"include": "#keywords"
 		},
 		{
 			"include": "#strings"
 		},
 		{
-			"include": "#paren-expression"
-		},
-		{
 			"include": "#comments"
-		},
-		{
-			"include": "#units"
 		},
 		{
 			"include": "#operators"
@@ -22,36 +17,46 @@
 	],
 	"repository": {
 		"keywords": {
-			"patterns": [{
-				"name": "keyword.control.tyd",
-				"match": "(\\*[a-zA-Z]*)"
-			}]
+			"patterns": [
+				{
+					"name": "keyword.control.tyd",
+					"match": "(\\*[a-zA-Z]*)"
+				}
+			]
 		},
 		"strings": {
-			"patterns": [{
-				"name": "constant.character.escape",
-				"match": "\\\\[.]"
-			}, 
-			{
-				"name": "string.quoted.double",
-				"match": "(\"[^\"\\\\]*(?:\\\\.[^\"\\\\]*)*\")"
-			}
-		]
+			"patterns": [
+				{
+					"name": "constant.character.escape",
+					"match": "\\\\[.]"
+				},
+				{
+					"name": "string.quoted.double",
+					"match": "(\"[^\"\\\\]*(?:\\\\.[^\"\\\\]*)*\")"
+				},
+				{
+					"name": "string.unquoted",
+					"match": "([\\w][^\\\"\\[\\{\\*\\s]*[\\n\\;\\]\\}\\#])|([\\w][^\\\"\\[\\{\\*\\s]*[\\s])(?:[\\S]+?)"
+				},
+				{
+					"name": "string.other",
+					"match": "\\d"
+				}
+			]
 		},
 		"comments": {
-			"patterns": [{
-				"name": "comment",
-				"begin": "#",
-				"end": "$"
-			}, {
-				"name": "comment.block.documentation",
-				"begin": "###",
-				"end": "$"
-			}]
-		},
-		"units": {
-			"name": "keyword.other.unit.tyd",
-			"match": "(\\d)"
+			"patterns": [
+				{
+					"name": "comment",
+					"begin": "#",
+					"end": "$"
+				},
+				{
+					"name": "comment.block.documentation",
+					"begin": "###",
+					"end": "$"
+				}
+			]
 		},
 		"operators": {
 			"name": "keyword.operator.tyd",
