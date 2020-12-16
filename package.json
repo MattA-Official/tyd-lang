@@ -3,7 +3,7 @@
     "displayName": "TyD",
     "description": "Syntax highlighting for Tynan's Tidy Data Language",
     "publisher": "Matthew-Adcock",
-    "version": "1.3.2",
+    "version": "1.4.0",
     "icon": "icon.png",
     "galleryBanner": {
         "color": "#0C585B",
@@ -16,29 +16,45 @@
         "Programming Languages"
     ],
     "contributes": {
-        "languages": [{
-            "id": "tyd",
-            "aliases": ["TyD", "tyd"],
-            "extensions": [".tyd"],
-            "configuration": "./language-configuration.json"
-        }, {
-            "id": "ttyd",
-            "aliases": ["TTyD", "ttyd"],
-            "extensions": [".ttyd"],
-            "configuration": "./language-configuration.json"
-        }],
-        "grammars": [{
-            "language": "tyd",
-            "scopeName": "source.tyd",
-            "path": "./syntaxes/tyd.tmLanguage.json"
-        }, {
-            "language": "ttyd",
-            "scopeName": "source.tyd",
-            "path": "./syntaxes/tyd.tmLanguage.json"
-        }]
+        "languages": [
+            {
+                "id": "tyd",
+                "aliases": [
+                    "TyD",
+                    "tyd"
+                ],
+                "extensions": [
+                    ".tyd"
+                ],
+                "configuration": "./language-configuration.json"
+            },
+            {
+                "id": "ttyd",
+                "aliases": [
+                    "TTyD",
+                    "ttyd"
+                ],
+                "extensions": [
+                    ".ttyd"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "tyd",
+                "scopeName": "source.tyd",
+                "path": "./syntaxes/tyd.tmLanguage.json"
+            },
+            {
+                "language": "ttyd",
+                "scopeName": "source.tyd",
+                "path": "./syntaxes/tyd.tmLanguage.json"
+            }
+        ]
     },
     "repository": {
         "type": "git",
         "url": "https://github.com/MattA-Official/tyd-lang"
     }
-} 
+}
