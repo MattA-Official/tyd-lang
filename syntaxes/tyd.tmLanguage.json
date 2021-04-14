@@ -1,67 +1,239 @@
 {
-	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"fileTypes": [
+		"tyd",
+		"ttyd"
+	],
 	"name": "TyD",
 	"patterns": [
 		{
-			"include": "#keywords"
-		},
-		{
-			"include": "#strings"
-		},
-		{
-			"include": "#comments"
-		},
-		{
-			"include": "#operators"
+			"include": "#main"
 		}
 	],
+	"scopeName": "source.tyd",
 	"repository": {
-		"keywords": {
+		"main": {
 			"patterns": [
 				{
-					"name": "keyword.control.tyd",
-					"match": "(\\*[a-zA-Z]*)"
+					"match": ";",
+					"name": "punctuation.tyd"
+				},
+				{
+					"match": "(\\w+)(\\s+null)",
+					"captures": {
+						"1": {
+							"name": "value.tyd"
+						},
+						"2": {
+							"name": "keyword.TyD"
+						}
+					}
+				},
+				{
+					"match": "\\d",
+					"name": "string.unquoted.tyd"
+				},
+				{
+					"begin": "(\\w+\\s+)?(\\{)",
+					"beginCaptures": {
+						"1": {
+							"name": "value.tyd"
+						},
+						"2": {
+							"name": "punctuation.tyd"
+						}
+					},
+					"patterns": [
+						{
+							"include": "#main__1"
+						}
+					],
+					"end": "(\\})",
+					"endCaptures": {
+						"1": {
+							"name": "punctuation.tyd"
+						}
+					}
+				},
+				{
+					"begin": "(\\w+\\W+)?(\\[)",
+					"beginCaptures": {
+						"1": {
+							"name": "value.tyd"
+						},
+						"2": {
+							"name": "punctuation.tyd"
+						}
+					},
+					"patterns": [
+						{
+							"include": "#main__2"
+						}
+					],
+					"end": "(\\])",
+					"endCaptures": {
+						"1": {
+							"name": "punctuation.tyd"
+						}
+					}
+				},
+				{
+					"begin": "(\\*)",
+					"beginCaptures": {
+						"1": {
+							"name": "keyword.tyd"
+						}
+					},
+					"patterns": [
+						{
+							"include": "#main__3"
+						}
+					],
+					"end": "(\\s)",
+					"endCaptures": {
+						"1": {
+							"name": "punctuation.tyd"
+						}
+					}
+				},
+				{
+					"begin": "(\\w+\\s+)?(\\\")",
+					"beginCaptures": {
+						"1": {
+							"name": "value.tyd"
+						},
+						"2": {
+							"name": "punctuation.tyd"
+						}
+					},
+					"patterns": [
+						{
+							"include": "#main__4"
+						}
+					],
+					"end": "(\\\")",
+					"endCaptures": {
+						"1": {
+							"name": "punctuation.tyd"
+						}
+					}
+				},
+				{
+					"begin": "(\\w+\\s+)?(\\|)",
+					"beginCaptures": {
+						"1": {
+							"name": "value.tyd"
+						},
+						"2": {
+							"name": "punctuation.tyd"
+						}
+					},
+					"patterns": [
+						{
+							"include": "#main__5"
+						}
+					],
+					"end": "(^(?=.{0,1})(?:|))",
+					"endCaptures": {
+						"1": {
+							"name": "comment.tyd"
+						}
+					}
+				},
+				{
+					"begin": "(#)",
+					"beginCaptures": {
+						"1": {
+							"name": "comment.tyd"
+						}
+					},
+					"patterns": [
+						{
+							"include": "#main__6"
+						}
+					],
+					"end": "(^(?=.{0,1})(?:|))",
+					"endCaptures": {
+						"1": {
+							"name": "comment.tyd"
+						}
+					}
 				}
 			]
 		},
-		"strings": {
+		"main__1": {
 			"patterns": [
 				{
-					"name": "constant.character.escape",
-					"match": "\\\\[.]"
+					"include": "#main"
 				},
 				{
-					"name": "string.quoted.double",
-					"match": "(\"[^\"\\\\]*(?:\\\\.[^\"\\\\]*)*\")"
-				},
-				{
-					"name": "string.unquoted",
-					"match": "([\\w][^\\\"\\[\\{\\*\\s]*[\\n\\;\\]\\}\\#])|([\\w][^\\\"\\[\\{\\*\\s]*[\\s])(?:[\\S]+?)"
-				},
-				{
-					"name": "string.other",
-					"match": "\\d"
+					"match": "(\\w+)(\\s+[^\\s\\x{003b}\\x{007c}\\x{0022}\\[\\]\\{\\}\\x{0023}]+)",
+					"captures": {
+						"1": {
+							"name": "value.tyd"
+						},
+						"2": {
+							"name": "string.unquoted.tyd"
+						}
+					}
 				}
 			]
 		},
-		"comments": {
+		"main__2": {
 			"patterns": [
 				{
-					"name": "comment",
-					"begin": "#",
-					"end": "$"
+					"include": "#main"
 				},
 				{
-					"name": "comment.block.documentation",
-					"begin": "###",
-					"end": "$"
+					"match": "([^\\s\\[\\]\\{\\}\\;]+)",
+					"name": "string.unquoted.tyd"
 				}
 			]
 		},
-		"operators": {
-			"name": "keyword.operator.tyd",
-			"match": "(\\|)"
+		"main__3": {
+			"patterns": [
+				{
+					"include": "#main"
+				},
+				{
+					"match": "([^\\x{002a}\\s]+)",
+					"name": "keyword.tyd"
+				}
+			]
+		},
+		"main__4": {
+			"patterns": [
+				{
+					"match": "((?:\\\\u[0-9a-f]{4})|(?:\\\\[\\x{0022}\\x{005c}\\x{002f}bfnrt]))",
+					"name": "string.quoted.tyd"
+				},
+				{
+					"match": "([^\\\"\\x{005c}]+)",
+					"name": "string.quoted.tyd"
+				}
+			]
+		},
+		"main__5": {
+			"patterns": [
+				{
+					"match": "(\\\\(?:\\\\|\"))",
+					"name": "string.quoted.tyd"
+				},
+				{
+					"match": "([^\\|\\x{005c}\\x{003b}]+)",
+					"name": "string.quoted.tyd"
+				},
+				{
+					"include": "#main"
+				}
+			]
+		},
+		"main__6": {
+			"patterns": [
+				{
+					"match": "([^\\x{0023}]+)",
+					"name": "comment.tyd"
+				}
+			]
 		}
-	},
-	"scopeName": "source.tyd"
+	}
 }

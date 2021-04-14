@@ -2,6 +2,12 @@
 
 All notable changes to this extension will be documented in this file.
 
+### 1.4.0
+
+Rewrote all of the highlighing
+
+**Now Supports the full TyD Scope**
+
 ### 1.3.0
 
 Removed diagnostics.
