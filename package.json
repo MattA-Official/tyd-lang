@@ -3,7 +3,7 @@
 	"displayName": "TyD",
 	"description": "Syntax highlighting for Tynan's Tidy Data Language",
 	"publisher": "Matthew-Adcock",
-	"version": "1.4.0",
+	"version": "1.5.0",
 	"icon": "icon.png",
 	"galleryBanner": {
 		"color": "#0C585B",
